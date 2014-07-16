@@ -35,16 +35,6 @@ exports.saveRatings = function ( filepath, callback ) {
   });
 };
 
-exports.getrating = function ( key ) {
-  db.rating.get("1!1", function(error,data){
-    console.log("getdata");
-    if ( error ) {
-      return console.log(error);
-    }
-    console.log(data);
-  });
-};
-
 exports.countAndAverage = function ( map,callback ) {
   var addOfRating = 0;
   var ratingarr;
