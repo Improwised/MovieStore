@@ -8,3 +8,9 @@ mydb1/LOG
 mydb1/LOG.old
 mydb1/MANIFEST-000034
 parsers/config.js
+db/000005.log
+db/CURRENT
+db/LOCK
+db/LOG
+db/LOG.old
+db/MANIFEST-000004

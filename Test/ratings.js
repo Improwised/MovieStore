@@ -39,7 +39,8 @@ describe("Math Module", function() {
       }, function(err,data){
       done();
     });
-
   });
-
+  after(function(done){
+    done();
+  });
 });
