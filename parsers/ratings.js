@@ -49,10 +49,10 @@ exports.countAndAverage = function ( map,callback ) {
       addOfRating = addOfRating + parseInt(data);
     });
     var avgOfRating = addOfRating/count;
-    console.log("movieid: "+ movieid + " == totalcounts: "+ count + ", averating:" + avgOfRating);
+
   }
 
-  callback();
+  callback(null,count,avgOfRating);
 };
 
 module.exports.parseTags = require("./parseTags.js");
