@@ -19,12 +19,6 @@ describe("Math Module", function() {
 
   });
 
-  it("should get data from rating db",function(){
-
-    math.getrating("1!1");
-
-  });
-
   it("should calculate count and average ratings for each movieId",function(done){
 
     math.countAndAverage({ '1': [ 5, 5 ],
