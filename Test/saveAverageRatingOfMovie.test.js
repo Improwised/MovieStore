@@ -1,7 +1,7 @@
 var assert = require("assert");
-var saveAverageRatingOfMovie = require("../saveAverageRatingOfMovie.js");
+var saveAverageRatingOfMovie = require("../parsers/saveAverageRatingOfMovie.js");
 
-var config = require("../config.js");
+var config = require("../parsers/config.js");
 var db = config.averageRatingOfMovieId;
 
 describe("saveAverageRatingOfMovie module", function() {

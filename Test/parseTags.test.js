@@ -1,11 +1,11 @@
 var assert = require("assert");
-var parseTags = require("../parseTags.js");
+var parseTags = require("../parsers/parseTags.js");
 
 describe("parseTags module", function() {
 
   it ("should parse input tag file", function() {
 
-    parseTags("resources/tags.txt", function(error, data) {
+    parseTags("Test/resources/tags.txt", function(error, data) {
 
       if (error) {
 

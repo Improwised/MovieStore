@@ -1,5 +1,5 @@
 var assert = require("assert");
-var isNumber = require("../isNumber.js");
+var isNumber = require("../parsers/isNumber.js");
 
 describe("isNumber module", function() {
 

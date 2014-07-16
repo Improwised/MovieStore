@@ -1,7 +1,7 @@
 var assert = require("assert");
-var saveRatingsCountOfMovie = require("../saveRatingsCountOfMovie.js");
+var saveRatingsCountOfMovie = require("../parsers/saveRatingsCountOfMovie.js");
 
-var config = require("../config.js");
+var config = require("../parsers/config.js");
 var db = config.ratingCountOfMovieId;
 
 describe("saveRatingsCountOfMovie module", function() {
