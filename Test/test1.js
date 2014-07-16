@@ -25,10 +25,10 @@ describe('creating database', function () {
             if (err) {
                 return done(err)
             }
-            db.movies.get(3, function (err, value) {
+            db.movies.get(4, function (err, value) {
                 if (err)
                     done(err)
-                assert.equal(value, 'Grumpier Old Men (1995)::Comedy|Romance');
+                assert.equal(value, 'Waiting to Exhale (1995)::Comedy|Drama|Romance');
                 done()
             })
         });
