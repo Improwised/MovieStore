@@ -6,7 +6,7 @@ describe("Math Module", function() {
 
   it('should parse the rating line', function (done) {
 
-    var filepath = "/Users/isha/workspace/team3/MochaEx/ratings.txt";
+    var filepath = "resources/ratings_small.txt";
     var eachline=math.parserating(filepath, done);
     //assert.equal(eachline[0],"1::1::5::838985046");
 
@@ -14,7 +14,7 @@ describe("Math Module", function() {
 
   it('should save a rating database', function(done){
 
-    var filepath = "/Users/isha/workspace/team3/MochaEx/ratings.txt";
+    var filepath = "resources/ratings_small.txt";
     math.saveRatings(filepath, done);
 
   });
