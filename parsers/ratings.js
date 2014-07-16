@@ -28,7 +28,7 @@ exports.saveRatings = function ( filepath, callback ) {
       timestamp: splits[3]
     });
 
-    db.ratingdb.put (key, value, function() {
+    db.ratings.put (key, value, function() {
 
       callback(null , lines);
     });
@@ -36,7 +36,7 @@ exports.saveRatings = function ( filepath, callback ) {
 };
 
 exports.getrating = function ( key ) {
-  db.ratingdb.get("1!1", function(error,data){
+  db.rating.get("1!1", function(error,data){
     console.log("getdata");
     if ( error ) {
       return console.log(error);
