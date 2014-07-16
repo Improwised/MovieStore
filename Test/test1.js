@@ -14,6 +14,9 @@ describe('parsing movie file', function () {
             ], line);
         });
     });
+    after(function(done){
+      done();
+    });
 });
 
 describe('creating database', function () {
@@ -30,6 +33,9 @@ describe('creating database', function () {
             })
         });
 
+    });
+    after(function(done){
+      done();
     });
 });
 
@@ -49,24 +55,7 @@ describe('mapping cat to movid', function () {
             done()
         })
     });
+    after(function(done){
+      done();
+    });
 });
-
-
-
-// describe('mapping cat to movid', function () {
-//     it('should gives movies acc. to cat', function (done) {
-//         file.mapping(["3::Grumpier Old Men (1995)::Comedy|Romance",
-//             "4::Waiting to Exhale (1995)::Comedy|Drama|Romance"
-//         ], function (err, map) {
-//             if (err)
-//                 return done(err)
-//             result = {
-//                 Comedy: ['3', '4'],
-//                 Romance: ['3', '4'],
-//                 Drama: ['4']
-//             };console.log(map.Comedy);
-//             assert.deepEqual(result, map)
-//             done()
-//         })
-//     });
-// });
