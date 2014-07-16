@@ -1,6 +1,11 @@
 {
   "name": "MovieStore",
   "version": "0.0.0",
+  "dependencies": {
+    "level": "*",
+    "level-sublevel": "*",
+    "async": "*"
+  },
   "description": "Modules of movies",
   "main": "index.js",
   "scripts": {
