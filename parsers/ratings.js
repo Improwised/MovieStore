@@ -64,3 +64,8 @@ exports.countAndAverage = function ( map,callback ) {
 
   callback();
 };
+
+module.exports.parseTags = require("./parseTags.js");
+module.exports.saveAverageRatingOfMovie = require("./saveAverageRatingOfMovie.js");
+module.exports.saveRatingsCountOfMovie = require("./saveRatingsCountOfMovie.js");
+module.exports.mapMovieIdToRatings = require("./mapMovieIdToRatings.js");
