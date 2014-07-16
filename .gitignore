@@ -1,5 +1,3 @@
 .DS_Store
 mydb/
-uid
-Test/ratings.js
-parsers/ratings.js
+Test/resources/ratings_small.txt
