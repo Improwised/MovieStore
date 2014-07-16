@@ -1,14 +1,10 @@
 {
-  "name": "MochaEx",
+  "name": "MovieStore",
   "version": "0.0.0",
-  "description": "",
-  "main": "ratings.js",
-  "directories": {
-    "test": "Test"
-  },
+  "description": "Modules of movies",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
-  }
+  "author": ""
+}
