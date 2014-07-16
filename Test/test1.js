@@ -1,8 +1,8 @@
 var fs = require("fs");
-var path = "/Users/khushbu/mochaex/movies.dat";
+var path = "./Test/Resources/movies.dat";
 var assert = require('assert');
-var db = require("/Users/khushbu/mochaex/parsers/config.js")
-var file = require('/Users/khushbu/mochaex/parsers/map.js')
+var db = require("../parsers/config.js")
+var file = require('../parsers/map.js')
 
 describe('parsing movie file', function () {
     it('should parse the line', function () {

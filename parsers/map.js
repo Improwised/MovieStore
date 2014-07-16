@@ -1,4 +1,4 @@
-var db = require("/Users/khushbu/mochaex/parsers/config.js")
+var db = require("../parsers/config.js")
 var fs = require("fs");
 
 exports.parse = function (path, callback) {
@@ -71,27 +71,3 @@ exports.mapping = function (path, callback) {
 callback(null, movidcatmap);
   })
 }
-
-
-// exports.mapping = function (data, callback) {
-//     var movidcatmap = {};
-//     data.forEach(function (line) {
-//         var splits = line.split("::")
-//         var movid = splits[0];
-//         var cat = splits[2]
-//         var movicat = cat.split("|")
-//             //  console.log(movicat[0]);
-//         for (var i = 0; i < movicat.length; i++) {
-//             if (movidcatmap[movicat[i]]) {
-//
-//                 movidcatmap[movicat[i]].push(movid);
-//
-//             } else {
-//
-//                 movidcatmap[movicat[i]] = [movid];
-//             }
-//
-//         }
-//     })
-//     callback(null, movidcatmap);
-// }
