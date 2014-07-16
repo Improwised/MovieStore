@@ -31,9 +31,9 @@ exports.save = function (path, cb) {
             var value = film[1] + "::" + film[2];
         }
         db.movies.put(key, value, cb);
-        /*movies.get('1',function (err, value) {
-          console.log(key,value);
-        })*/
+        db.movies.get('4',function (err, value) {
+          console.log(4,value,"0000");
+        })
 
     });
 };
