@@ -1,0 +1,14 @@
+.DS_Store
+mydb/000373.log
+mydb/CURRENT
+mydb/LOCK
+mydb/LOG
+mydb/LOG.old
+mydb/MANIFEST-000371
+uid
+movies.dat
+mydb/000367.ldb
+mydb/000369.ldb
+mydb/000372.ldb
+package.json
+parsers/config.js
