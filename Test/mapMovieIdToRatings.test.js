@@ -1,5 +1,5 @@
 var assert = require("assert");
-var mapMovieIdToRatings = require("../mapMovieIdToRatings.js");
+var mapMovieIdToRatings = require("../parsers/mapMovieIdToRatings.js");
 
 describe("mapMovieIdToRatings module", function() {
 
