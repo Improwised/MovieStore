@@ -1,7 +1,4 @@
-var level = require('level');
-var sub = require ( 'level-sublevel' );
-var subdb = sub ( level ( "./mydb1" ));
-var ratingdb = subdb.sublevel( 'ratings' );
+var db = require("../parsers/config.js");
 var fs = require('fs');
 
 
@@ -31,7 +28,7 @@ exports.saveRatings = function ( filepath, callback ) {
       timestamp: splits[3]
     });
 
-    ratingdb.put (key, value, function() {
+    db.ratingdb.put (key, value, function() {
 
       callback(null , lines);
     });
@@ -39,7 +36,7 @@ exports.saveRatings = function ( filepath, callback ) {
 };
 
 exports.getrating = function ( key ) {
-  ratingdb.get("1!1", function(error,data){
+  db.ratingdb.get("1!1", function(error,data){
     console.log("getdata");
     if ( error ) {
       return console.log(error);
@@ -58,11 +55,12 @@ exports.countAndAverage = function ( map,callback ) {
       ratingarr = map[movieid];
       count = ratingarr.length;
     }
+    ratingarr.forEach( function(data) {
+      addOfRating = addOfRating + parseInt(data);
+    });
+    var avgOfRating = addOfRating/count;
+    console.log("movieid: "+ movieid + " == totalcounts: "+ count + ", averating:" + avgOfRating);
   }
-  ratingarr.forEach( function(data) {
-    addOfRating = addOfRating + parseInt(data);
-  });
-  var avgOfRating = addOfRating/count;
-  console.log(avgOfRating);
+
   callback();
 };

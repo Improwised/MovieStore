@@ -1,2 +1,10 @@
 parsers/.DS_Store
 .DS_Store
+mydb1/000036.log
+mydb1/000037.ldb
+mydb1/CURRENT
+mydb1/LOCK
+mydb1/LOG
+mydb1/LOG.old
+mydb1/MANIFEST-000034
+parsers/config.js
