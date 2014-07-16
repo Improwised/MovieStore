@@ -1,6 +1,8 @@
 var level = require( 'level');
 var sub = require ( 'level-sublevel' );
-var subdb = sub ( level ( "./db" ));
-module.exports.ratings = subdb.sublevel( 'ratings' );
-module.exports.movies = subdb.sublevel('movies');
-module.exports.genres = subdb.sublevel('genres');
+var db = sub ( level ( "./db" ));
+module.exports.ratings = db.sublevel( 'ratings' );
+module.exports.movies = db.sublevel('movies');
+module.exports.genres = db.sublevel('genres');
+module.exports.averageRatingOfMovieId = db.sublevel("averageRatingOfMovieId");
+module.exports.ratingCountOfMovieId = db.sublevel("ratingCountOfMovieId");
