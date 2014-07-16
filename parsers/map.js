@@ -29,11 +29,13 @@ exports.save = function (path, cb) {
             var key = film[0];
             //console.log(key,films[j])
             var value = film[1] + "::" + film[2];
+            db.movies.put(key, value);
         }
-        db.movies.put(key, value, cb);
-        db.movies.get('4',function (err, value) {
-          console.log(4,value,"0000");
-        })
+        cb();
+        // db.movies.put(key, value, cb);
+        // db.movies.get('4',function (err, value) {
+        //   console.log(4,value,"0000");
+        // })
 
     });
 };
