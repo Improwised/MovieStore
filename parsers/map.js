@@ -71,47 +71,12 @@ exports.mapping = function (path, cb) {
                     db.genres.put(movicat[i], movidcatmap[movicat[i]])
                 }
 
-            }},
-            function (err) {
-                if (err) {
-                    throw err;
-                }
-            }); cb(null, movidcatmap);
+            }}
+            // function (err) {
+            //     if (err) {
+            //         throw err;
+            //     }
+            //}
+            ); cb(null, movidcatmap);
           });
   }
-            /*
-
-            exports.mapping = function (path, callback) {
-                var movidcatmap = {};
-                fs.readFile(path, function (error, data) {
-                    if (error) {
-                        return error
-                    }
-                    var films = data.toString().split('\n')
-                    films.pop();
-
-                    films.forEach(function (line) {
-                        var splits = line.split("::")
-                        var movid = splits[0];
-                        var cat = splits[2]
-                        var movicat = cat.split("|")
-                            //  console.log(movicat[0]);
-                        for (var i = 0; i < movicat.length; i++) {
-                            if (movidcatmap[movicat[i]]) {
-
-                                movidcatmap[movicat[i]].push(movid);
-                                //console.log(movicat[i]+movidcatmap[movicat[i]])
-                                db.genres.put(movicat[i], movidcatmap[movicat[i]])
-                            } else {
-
-                                movidcatmap[movicat[i]] = [movid];
-                                //console.log(movicat[i]+movidcatmap[movicat[i]])
-                                db.genres.put(movicat[i], movidcatmap[movicat[i]])
-                            }
-
-                        }
-                    })
-                    callback(null, movidcatmap);
-                })
-            }
-            */
