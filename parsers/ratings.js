@@ -1,5 +1,6 @@
 var db = require("../parsers/config.js");
 var fs = require('fs');
+var async = require("async");
 
 
 exports.parserating = function ( filepath, callback ) {
@@ -21,19 +22,25 @@ exports.saveRatings = function ( filepath, callback ) {
     }
 
     var lines = data.toString().split("\n");
-    var splits = lines.toString().split("::");
-    var key = splits[0]+"!"+splits[1];
-    var value = JSON.stringify({
-      rating: splits[2],
-      timestamp: splits[3]
-    });
+    lines.pop();
+    async.each(lines, function(line,callback){
+      var splits = line.toString().split("::");
+      var key = splits[0]+"!"+splits[1];
+      var value = JSON.stringify({
+        rating: splits[2],
+        timestamp: splits[3]
+      });
+      db.ratings.put (key, value,callback);
+    }, callback);
 
-    db.ratings.put (key, value, function() {
 
-      callback(null , lines);
-    });
   });
+
+  /*db.ratings.get("7!2",function(error,value){
+    console.log(value);
+  });*/
 };
+
 
 exports.countAndAverage = function ( map,callback ) {
   var addOfRating = 0;
