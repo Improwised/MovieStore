@@ -1,5 +1,5 @@
 var fs = require("fs");
-var path = "./Test/Resources/movies.dat";
+var path = "./Test/Resources/movies.txt";
 var assert = require('assert');
 var db = require("../parsers/config.js")
 var file = require('../parsers/map.js')
