@@ -3,13 +3,14 @@ var path = "./Test/Resources/movies.dat";
 var assert = require('assert');
 var db = require("../parsers/config.js")
 var file = require('../parsers/map.js')
+var listfile = require('../model/user.js')
 
 describe('parsing movie file', function () {
     it(' should parse the line', function () {
         file.parse(path, function (err, line) {
 
             //  console.log(line)
-            assert.deepEqual(['3::Grumpier Old Men (1995)::Comedy|Romance',
+            assert.deepEqual(['1::Toy Story (1995)::Adventure|Animation|Children|Comedy|Fantasy', '2::Jumanji (1995)::Adventure|Children|Fantasy', '3::Grumpier Old Men (1995)::Comedy|Romance',
                 '4::Waiting to Exhale (1995)::Comedy|Drama|Romance'
             ], line);
         });
@@ -23,7 +24,7 @@ describe('parsing movie file', function () {
             db.movies.get(4, function (err, value) {
                 if (err)
                     done(err)
-                assert.equal(value, 'Waiting to Exhale (1995)::Comedy|Drama|Romance');
+                assert.equal(value, '{\"movie_title\":\"Waiting to Exhale (1995)\",\"genres\":[\"Comedy\",\"Drama\",\"Romance\"]}');
                 done()
             })
         });
@@ -35,17 +36,36 @@ describe('parsing movie file', function () {
             if (err)
                 return done(err)
             result = {
-                Comedy: ['3', '4'],
-                Romance: ['3', '4'],
+
+                Adventure: ["1", "2"],
+                Animation: ["1"],
+                Children: ["1", "2"],
+                Comedy: ["1", "3", "4"],
+                Fantasy: ["1", "2"],
+                Romance: ["3", "4"],
                 Drama: ['4']
-             };
-             //console.log(map.Comedy);
+            };
+            //console.log(map.Comedy);
             assert.deepEqual(result, map)
             done()
         })
     });
 
-    after(function(done){
-      done();
+    it('should gives list of movies acc. to userid', function (done) {
+        listfile.movielist('1', function (err, list) {
+            if (err)
+                return done(err)
+            result = [
+                'Toy Story (1995)',
+                'Grumpier Old Men (1995)'
+            ];
+            console.log(list);
+            assert.deepEqual(result, list)
+            done()
+        })
+    });
+
+    after(function (done) {
+        done();
     });
 });
