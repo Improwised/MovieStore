@@ -1,13 +1,3 @@
 .DS_Store
 db/
 node_modules/
-mydb/000367.ldb
-mydb/000369.ldb
-mydb/000372.ldb
-mydb/000375.ldb
-mydb/000384.log
-mydb/CURRENT
-mydb/LOCK
-mydb/LOG
-mydb/LOG.old
-mydb/MANIFEST-000383

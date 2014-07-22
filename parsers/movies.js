@@ -30,7 +30,7 @@ exports.save = function (path, cb) {
             var film = line.split("::");
             var key = film[0];
             //console.log(key,films[j])
-            var value = film[1] + "::" + film[2];
+            var value = JSON.stringify({movie_title: film[1], genres: film[2].split("|")});
             db.movies.put(key, value);
             //console.log(key, value)
             callback();
