@@ -2,7 +2,7 @@ var fs = require("fs");
 var path = "./Test/Resources/movies.dat";
 var assert = require('assert');
 var db = require("../parsers/config.js")
-var file = require('../parsers/map.js')
+var file = require('../parsers/movies.js')
 var listfile = require('../model/user.js')
 
 describe('parsing movie file', function () {
